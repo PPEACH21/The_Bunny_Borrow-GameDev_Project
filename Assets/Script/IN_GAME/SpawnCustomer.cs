@@ -11,7 +11,6 @@ public class SpawnCustomer : MonoBehaviour
     public float checkDistance = 2f;
 
     private float nextSpawnTime;
-    public float prefabSpeed = 10f;
     private List<int> availableIndices;
     private bool isTargetOccupied = false;
 
@@ -62,7 +61,7 @@ public class SpawnCustomer : MonoBehaviour
         newPrefab.transform.Rotate(0f, 90f, 0f);
         PrefabMover mover = newPrefab.AddComponent<PrefabMover>();
         mover.SetTarget(target);
-        mover.speed = prefabSpeed;
+        mover.speed = Datainfo.speedcustomer;
     }
 }
 
