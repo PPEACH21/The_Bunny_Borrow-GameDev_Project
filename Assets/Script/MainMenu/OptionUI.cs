@@ -11,7 +11,7 @@ public class OptionUI : MonoBehaviour
     private void Awake()
     {
         backButton.onClick.AddListener(() => {
-            SceneManager.LoadScene(Loader.Scene.MainMenu.ToString());
+            SceneManager.LoadScene(Loader.Scene.StartMenu.ToString());
         });
 
     }
