@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 51787697}
   m_Layer: 0
-  m_Name: StopPos (1)
+  m_Name: StopPos 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 51787696}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99, y: 0, z: 123.4}
+  m_LocalPosition: {x: 103.3, y: 0, z: 113.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -156,11 +156,6 @@ Transform:
 --- !u!1 &256267724 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5302101273037702063, guid: 67be4fd101b125040a1720bb5cdd5d03, type: 3}
-  m_PrefabInstance: {fileID: 699151876}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &256267727 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 510606640246462653, guid: 67be4fd101b125040a1720bb5cdd5d03, type: 3}
   m_PrefabInstance: {fileID: 699151876}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &256267728 stripped
@@ -194,7 +189,7 @@ GameObject:
   - component: {fileID: 608134198}
   - component: {fileID: 608134197}
   m_Layer: 0
-  m_Name: SpawnCus
+  m_Name: SpawnCus1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,10 +208,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab:
-  - {fileID: 3973262254793581098, guid: 85f5cca848106cf489e7d5edd323a9ea, type: 3}
+  - {fileID: 2399699890854033136, guid: 8597bcff20344f945a78cfb244853ac0, type: 3}
+  - {fileID: 1153224850497765367, guid: 6639764f4173b634d8bdba8e1958511c, type: 3}
+  - {fileID: 168152538435830531, guid: 65758fd650e9e7c4d8d29efd935fa79b, type: 3}
+  - {fileID: 87386110546826433, guid: 0227f40ba28861b44be6e8c077e08264, type: 3}
   target: {fileID: 1965100186}
-  animator: {fileID: 0}
-  spawnInterval: 10
   checkDistance: 2
   prefabSpeed: 10
 --- !u!4 &608134198
@@ -585,7 +581,7 @@ GameObject:
   - component: {fileID: 1160353819}
   - component: {fileID: 1160353818}
   m_Layer: 0
-  m_Name: SpawnCus (1)
+  m_Name: SpawnCus 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -604,10 +600,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab:
-  - {fileID: 3973262254793581098, guid: 85f5cca848106cf489e7d5edd323a9ea, type: 3}
+  - {fileID: 2399699890854033136, guid: 8597bcff20344f945a78cfb244853ac0, type: 3}
+  - {fileID: 1153224850497765367, guid: 6639764f4173b634d8bdba8e1958511c, type: 3}
+  - {fileID: 168152538435830531, guid: 65758fd650e9e7c4d8d29efd935fa79b, type: 3}
+  - {fileID: 87386110546826433, guid: 0227f40ba28861b44be6e8c077e08264, type: 3}
   target: {fileID: 51787697}
-  animator: {fileID: 256267727}
-  spawnInterval: 10
   checkDistance: 2
   prefabSpeed: 10
 --- !u!4 &1160353819
@@ -1070,7 +1067,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965100186}
   m_Layer: 0
-  m_Name: StopPos
+  m_Name: StopPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1085,7 +1082,7 @@ Transform:
   m_GameObject: {fileID: 1965100185}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99, y: 0, z: 86.6}
+  m_LocalPosition: {x: 103.3, y: 0, z: 83.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

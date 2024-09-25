@@ -6,8 +6,6 @@ public class SpawnCustomer : MonoBehaviour
 {
     public GameObject[] prefab;
     public Transform target;
-    public Animator animator;
-    public float spawnInterval = 10f;
     public float checkDistance = 2f;
 
     private float nextSpawnTime;
@@ -18,7 +16,7 @@ public class SpawnCustomer : MonoBehaviour
     private void Start()
     {
         
-        nextSpawnTime = Time.time + spawnInterval;
+        nextSpawnTime = Time.time + Datainfo.spawnInterval;
         availableIndices = Enumerable.Range(0, prefab.Length).ToList();
         // สร้าง prefab แบบสุ่มเลขทันทีที่เริ่มเกม
         int randomPrefabIndex = Random.Range(0, prefab.Length);
@@ -44,7 +42,7 @@ public class SpawnCustomer : MonoBehaviour
                 availableIndices.RemoveAt(randomIndex);
 
                 SpawnPrefab(prefabIndex);
-                nextSpawnTime = Time.time + spawnInterval;
+                nextSpawnTime = Time.time + Datainfo.spawnInterval;
             }
         }
         Debug.DrawRay(target.position, Vector3.up * checkDistance, Color.red);
@@ -62,7 +60,7 @@ public class SpawnCustomer : MonoBehaviour
         newPrefab.transform.Rotate(0f, 90f, 0f);
         PrefabMover mover = newPrefab.AddComponent<PrefabMover>();
         mover.SetTarget(target);
-        mover.speed = prefabSpeed;
+        mover.speed = Datainfo.speedcustomer;
     }
 }
 
@@ -71,7 +69,7 @@ public class PrefabMover : MonoBehaviour
     public Animator animator;
     public Transform target;
     public float speed = 2f;
-    public static bool check;
+    public bool check;
 
     private void Start()
     {
@@ -79,21 +77,19 @@ public class PrefabMover : MonoBehaviour
         check = false;
     }
 
-    public void SetTarget(Transform newTarget)
+    public void SetTarget(Transform newTarget) //set target
     {
         target = newTarget;
     }
 
     private void Update()
     {
-        if (target != null)
+        if (target != null)//move to target
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime); //if on target stop
             if(transform.position == target.position && check == false)
                 {
                     check = true;
-                    Debug.Log(check);
-                   // animator.Play("waiting action");
                 }
         }
         
