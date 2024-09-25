@@ -18,7 +18,7 @@ public class CStop : MonoBehaviour
 
     void Update()
     {
-        if (move != null && PrefabMover.check == true) // Access static variable using class name
+        if (move != null && move.check == true)
         {
             animator.Play("waiting action");
         }
