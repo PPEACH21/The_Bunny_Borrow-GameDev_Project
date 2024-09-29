@@ -7,7 +7,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
             Debug.Log(gameObject.name);
             switch (gameObject.name)
             {
-                case "Cus1(Clone)":
+                case "Customer1(Clone)":
                     if (!SPAT1.hasSpawned)
                     {
                        FindObjectOfType<SPAT1>().SpawnPrefab();
@@ -15,7 +15,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                     Debug.Log("Success");
                     }
                     break;
-                case "Cus2(Clone)":
+                case "Customer2(Clone)":
                     if (!SPAT2.hasSpawned)
                     {
                         FindObjectOfType<SPAT2>().SpawnPrefab();
@@ -23,7 +23,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                     Debug.Log("Success");
                     }
                 break;
-                case "Cus3(Clone)":
+                case "Customer3(Clone)":
                     if (!SPAT3.hasSpawned)
                     {
                         FindObjectOfType<SPAT3>().SpawnPrefab();
@@ -31,7 +31,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                     Debug.Log("Success");
                     }
                 break;
-                case "Cus4(Clone)":
+                case "Customer4(Clone)":
                     if (!SPAT4.hasSpawned)
                     {
                         FindObjectOfType<SPAT4>().SpawnPrefab();
