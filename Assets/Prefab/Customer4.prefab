@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3137878733390529825}
-  - component: {fileID: -2578276203411669652}
   - component: {fileID: 3098957521305293962}
   - component: {fileID: 6089860868254145164}
   - component: {fileID: 1286766297042865300}
   - component: {fileID: 7252355746311568962}
   - component: {fileID: 3759046611449943420}
+  - component: {fileID: 4638325140295166893}
   m_Layer: 6
   m_Name: Customer4
   m_TagString: Untagged
@@ -41,18 +41,6 @@ Transform:
   - {fileID: 4598696621740086704}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-2578276203411669652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 87386110546826433}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d86955528e924d4997d52bed4b96fa2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3098957521305293962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,8 +112,20 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 18.996418, y: 22.681297, z: 16.365814}
-  m_Center: {x: -5.0016785, y: 10.906811, z: -0.9042907}
+  m_Size: {x: 25.0428, y: 22.681297, z: 23.33}
+  m_Center: {x: -1.9784, y: 10.906811, z: -5.883}
+--- !u!114 &4638325140295166893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87386110546826433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f1ddb3ebecf9b4d8abba35ea93bf09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &268481372461165856
 PrefabInstance:
   m_ObjectHideFlags: 0
