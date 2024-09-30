@@ -1,12 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Destroy : MonoBehaviour, IInteractable
+public class Destroy : MonoBehaviour
 {
-    public void Interact()
+    public string tagName = "ToDelete"; // เปลี่ยนชื่อ Tag ตามต้องการ
+
+    void Start()
     {
-        Destroy(gameObject);
+        GameObject[] objectsToDelete = GameObject.FindGameObjectsWithTag(tagName);
+
+        foreach (GameObject obj in objectsToDelete)
+        {
+            Destroy(obj);
+        }
     }
-   
 }

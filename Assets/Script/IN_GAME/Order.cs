@@ -67,7 +67,7 @@ public class Order : MonoBehaviour, IInteractable
             Debug.Log(gameObject.name);
             switch (gameObject.name)
             {
-                case "RT1(Clone)":
+                case "Spawn At Table 1(Clone)":
                     if (!SpawnOrder1.hasSpawned)
                     {
                         order = true;
@@ -76,7 +76,7 @@ public class Order : MonoBehaviour, IInteractable
                         Debug.Log("Success");
                     }
                     break;
-                case "RT2(Clone)":
+                case "Spawn At Table 2(Clone)":
                     if (!SpawnOrder2.hasSpawned)
                     {
                         order = true;
@@ -85,7 +85,7 @@ public class Order : MonoBehaviour, IInteractable
                         Debug.Log("Success");
                     }
                     break;
-                case "RT3(Clone)":
+                case "Spawn At Table 3(Clone)":
                     if (!SpawnOrder3.hasSpawned)
                     {
                         order = true;
@@ -94,7 +94,7 @@ public class Order : MonoBehaviour, IInteractable
                         Debug.Log("Success");
                     }
                     break;
-                case "RT4(Clone)":
+                case "Spawn At Table 4(Clone)":
                     if (!SpawnOrder4.hasSpawned)
                     {
                         order = true;
