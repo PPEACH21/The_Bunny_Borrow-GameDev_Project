@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8643161875453279696}
+  - component: {fileID: 5807512470441954416}
   m_Layer: 0
   m_Name: Carrot 2
   m_TagString: Untagged
@@ -33,6 +34,19 @@ Transform:
   - {fileID: 3615357037900666782}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5807512470441954416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257693536131547638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 037b1a73fed39ee40b1f180619ba5593, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeft: 5
 --- !u!1001 &6622739646158904601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89,7 +103,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -68.526
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5856604571115759530, guid: d960932ff7faf6c45a42bbcec91f714d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -155,7 +170,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -68.526
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5856604571115759530, guid: d960932ff7faf6c45a42bbcec91f714d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

@@ -8,16 +8,15 @@ public class Order : MonoBehaviour, IInteractable
 {
     // อ้างอิงไปยัง TextMeshPro 3D ที่ต้องการควบคุม
     public TextMeshPro textToShowWhenFalse; //text1
-    public TextMeshPro textToShowWhenTrue; //text2
-    public TextMeshPro textToShowAfterFoodServed; //text3
 
     private bool order = false; // ตัวแปร order เริ่มต้นเป็น false
     private bool foodServed = false; // ตัวแปรเช็คว่าได้รับอาหารหรือยัง
+    public ParticleSystem fireworkEffect;
 
     void Start()
     {
         // ตรวจสอบว่า TextMeshPro 3D ทั้งสองถูกกำหนดค่าใน Inspector หรือไม่
-        if (textToShowWhenFalse == null || textToShowWhenTrue == null)
+        if (textToShowWhenFalse == null)
         {
             Debug.LogError("โปรดกำหนดค่า TextMeshPro 3D ทั้งสองใน Inspector!");
         }
@@ -27,11 +26,9 @@ public class Order : MonoBehaviour, IInteractable
             UpdateTextVisibility();
         }
 
-        // ซ่อน text2 และ text3 ตอนเริ่มต้น
-        textToShowWhenTrue.gameObject.SetActive(false);
-        if (textToShowAfterFoodServed != null)
+        if(fireworkEffect.isPlaying)
         {
-            textToShowAfterFoodServed.gameObject.SetActive(false);
+            fireworkEffect.Stop();
         }
     }
 
@@ -39,31 +36,13 @@ public class Order : MonoBehaviour, IInteractable
     void UpdateTextVisibility()
     {
         textToShowWhenFalse.gameObject.SetActive(!order);
-        textToShowWhenTrue.gameObject.SetActive(order);
     }
 
-    public void UpdateTextAfterFoodServed()
-    {
-        // ซ่อน TextMeshPro ทั้งสองตัวเดิม
-        textToShowWhenFalse.gameObject.SetActive(false);
-        textToShowWhenTrue.gameObject.SetActive(false);
 
-        // แสดง TextMeshPro ใหม่หลังจากได้รับอาหาร
-        if (textToShowAfterFoodServed != null)
-        {
-            textToShowAfterFoodServed.gameObject.SetActive(true);
-        }
-        else
-        {
-            Debug.LogError("โปรดกำหนดค่า TextMeshPro สำหรับแสดงหลังจากได้รับอาหารใน Inspector!");
-        }
-    }
 
     // เพิ่มฟังก์ชัน Interact() เพื่อรับ interact
     public void Interact()
     {
-        if (!foodServed)
-        {
             Debug.Log(gameObject.name);
             switch (gameObject.name)
             {
@@ -73,53 +52,81 @@ public class Order : MonoBehaviour, IInteractable
                         order = true;
                         FindObjectOfType<SpawnOrder1>().SpawnPrefab();
                         UpdateTextVisibility(); // แสดง text2 หลังจาก interact ครั้งแรก
+                        AnimationRes.defaultAnimation = "waiting action";
                         Debug.Log("Success");
                     }
-                    break;
+                    if (UpdateTextAfter.checkbill)
+                    {
+                        Destroy(gameObject);
+                        fireworkEffect.Play();
+                        SPAT1.hasSpawned = false;
+                        UpdateTextAfter.checkbill = false;
+                        SpawnOrder1.hasSpawned = false;
+                        FSP1.hasSpawned = false;
+                    }
+                break;
                 case "Spawn At Table 2(Clone)":
                     if (!SpawnOrder2.hasSpawned)
                     {
                         order = true;
                         FindObjectOfType<SpawnOrder2>().SpawnPrefab();
                         UpdateTextVisibility(); // แสดง text2 หลังจาก interact ครั้งแรก
+                        AnimationRes2.defaultAnimation = "waiting action";
                         Debug.Log("Success");
                     }
-                    break;
+                    if (UpdateTextAfter2.checkbill)
+                    {
+                        Destroy(gameObject);
+                        fireworkEffect.Play();
+                        SPAT2.hasSpawned = false;
+                        UpdateTextAfter2.checkbill = false;
+                        SpawnOrder2.hasSpawned = false;
+                        FSP2.hasSpawned =  false;
+                    }
+                break;
                 case "Spawn At Table 3(Clone)":
                     if (!SpawnOrder3.hasSpawned)
                     {
                         order = true;
                         FindObjectOfType<SpawnOrder3>().SpawnPrefab();
                         UpdateTextVisibility(); // แสดง text2 หลังจาก interact ครั้งแรก
+                        AnimationRes3.defaultAnimation = "waiting action";
                         Debug.Log("Success");
                     }
-                    break;
+                    if (UpdateTextAfter3.checkbill)
+                    {
+                        Destroy(gameObject);
+                        fireworkEffect.Play();
+                        SPAT3.hasSpawned = false;
+                        UpdateTextAfter3.checkbill = false;
+                        SpawnOrder3.hasSpawned = false;
+                        FSP3.hasSpawned = false;
+                    }
+                break;
                 case "Spawn At Table 4(Clone)":
                     if (!SpawnOrder4.hasSpawned)
                     {
                         order = true;
                         FindObjectOfType<SpawnOrder4>().SpawnPrefab();
                         UpdateTextVisibility(); // แสดง text2 หลังจาก interact ครั้งแรก
+                        AnimationRes4.defaultAnimation = "waiting action";
                         Debug.Log("Success");
                     }
-                    break;
+                    if (UpdateTextAfter4.checkbill)
+                    {
+                        Destroy(gameObject);
+                        fireworkEffect.Play();
+                        SPAT4.hasSpawned = false;
+                        UpdateTextAfter4.checkbill = false;
+                        SpawnOrder4.hasSpawned = false;
+                        FSP4.hasSpawned = false;
+                    }
+                break;
                 default:
                     // Optional: Handle cases where the name doesn't match any of the above
                     break;
+
             }
 
-        }
-        else
-        {
-            // ถ้าได้รับอาหารแล้ว และมีการ Interact อีกครั้ง ให้ลบ Object ที่มีสคริปต์ Order นี้
-            Destroy(gameObject);
-        }
-    }
-
-    // ฟังก์ชันที่จะถูกเรียกจากสคริปต์ของ Prefab อาหาร เมื่อมีการ Interact
-    public void FoodInteracted()
-    {
-        foodServed = true;
-        UpdateTextAfterFoodServed(); // แสดง text3 หลังจาก interact กับอาหาร
     }
 }

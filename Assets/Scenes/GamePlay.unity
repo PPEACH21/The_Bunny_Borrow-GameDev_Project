@@ -947,6 +947,7 @@ GameObject:
   m_Component:
   - component: {fileID: 951336539}
   - component: {fileID: 951336540}
+  - component: {fileID: 951336541}
   m_Layer: 0
   m_Name: SPAT1
   m_TagString: Untagged
@@ -983,6 +984,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 4454395758236277746, guid: ac9e1e4fbd3e8a548a9be63249fc6f06, type: 3}
   spawnPoint: {fileID: 951336539}
+--- !u!114 &951336541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951336536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86bb45ec5b741524bb6447b04cc00f6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 6459734540345540131, guid: d960932ff7faf6c45a42bbcec91f714d, type: 3}
 --- !u!1 &960628857
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,6 +1007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 960628863}
   - component: {fileID: 960628864}
+  - component: {fileID: 960628865}
   m_Layer: 0
   m_Name: SPAT4
   m_TagString: Untagged
@@ -1029,6 +1044,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 1081260010664962361, guid: b454ef5412f878a49a89e9c16b1bf1d1, type: 3}
   spawnPoint: {fileID: 960628863}
+--- !u!114 &960628865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960628857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007812059f421a540a5081798c48de50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 1830442677567457659, guid: 24896a4fd1480394e94118e017f00cf0, type: 3}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034358532}
   - component: {fileID: 1034358533}
+  - component: {fileID: 1034358534}
   m_Layer: 0
   m_Name: SPAT2
   m_TagString: Untagged
@@ -1245,6 +1274,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 8954934211810142499, guid: 1846c500e3aad7d4cac922eaf6d7d155, type: 3}
   spawnPoint: {fileID: 1034358532}
+--- !u!114 &1034358534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034358529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd977b0d5c6f68340b9c00be76597d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 3257693536131547638, guid: 9f5ec35b8f8da264d89aa12fb6e5eb95, type: 3}
 --- !u!1 &1048719325 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8391222552659086748, guid: 0081275f2a4534d4cb3034dfb3049208, type: 3}
@@ -2543,6 +2585,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946963390}
   - component: {fileID: 1946963391}
+  - component: {fileID: 1946963392}
   m_Layer: 0
   m_Name: SPAT3
   m_TagString: Untagged
@@ -2579,6 +2622,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabToSpawn: {fileID: 6768978206678565484, guid: 8f3bfd23641710f4b8d76ebbc98934bf, type: 3}
   spawnPoint: {fileID: 1946963390}
+--- !u!114 &1946963392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946963389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 981c008be98e56b448f589b6364230e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 5947531066399415011, guid: 0b53b1c7a555631478e3fb77a9e1d921, type: 3}
 --- !u!4 &1955324495 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4654332480978554313, guid: efb3bf968862df44c8a9174054d2282a, type: 3}
