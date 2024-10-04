@@ -12,7 +12,7 @@ public class Background : MonoBehaviour
         if (backgroundMusic != null)
         {
             backgroundMusicSource.clip = backgroundMusic;
-            backgroundMusicSource.loop = true; // เล่นซ้ำ
+            backgroundMusicSource.loop = true; 
             backgroundMusicSource.Play();
 
         }
@@ -23,6 +23,7 @@ public class Background : MonoBehaviour
         if (backgroundMusicSource.isPlaying)
         {
             backgroundMusicSource.Stop();
+            AudioManager.instance.musicSource.Play();
         }
     }
 }

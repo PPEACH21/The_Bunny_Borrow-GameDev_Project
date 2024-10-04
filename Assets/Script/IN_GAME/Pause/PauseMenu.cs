@@ -22,6 +22,7 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("StartMenu");
         Time.timeScale = 1;
+        AudioManager.instance.musicSource.Pause();
        
     }
 
@@ -29,6 +30,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        
     }
 
     public void Restart()
