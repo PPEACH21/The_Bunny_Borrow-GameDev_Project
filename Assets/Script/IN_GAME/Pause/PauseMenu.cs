@@ -1,9 +1,16 @@
-﻿using UnityEngine.SceneManagement;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    [SerializeField] GameObject winPanel;
+
+    void Start()
+    {
+        // เรียกฟังก์ชัน ShowWinPanel หลังจากเวลาผ่านไป 10 วินาที
+        Invoke("ShowWinPanel", 5f);
+    }
 
     public void Pause()
     {
@@ -15,7 +22,7 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("StartMenu");
         Time.timeScale = 1;
-        AudioManager.instance.musicSource.Pause(); // หยุดเพลงใน AudioManager
+       
     }
 
     public void Resume()
@@ -28,6 +35,12 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
-         
+    }
+
+    
+    void ShowWinPanel()
+    {
+        winPanel.SetActive(true); // แสดง winPanel
+        Time.timeScale = 0; // หยุดเกมเมื่อจบ (ถ้าต้องการ)
     }
 }
