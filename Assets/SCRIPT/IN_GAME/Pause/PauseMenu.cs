@@ -9,7 +9,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         // เรียกฟังก์ชัน ShowWinPanel หลังจากเวลาผ่านไป 10 วินาที
-        Invoke("ShowWinPanel", 5f);
+        //Invoke("ShowWinPanel", 5f);
     }
 
     public void Pause()
@@ -20,7 +20,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene("LoadingScene");
+        Datainfo.GoScene = 2;
         Time.timeScale = 1;
         AudioManager.instance.musicSource.Pause();
        
