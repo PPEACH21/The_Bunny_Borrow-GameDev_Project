@@ -11,24 +11,32 @@ public class InteractObject : MonoBehaviour
 {
     public Transform InteractorSource;
     public float InteractRange;
-    public float raycastHeightOffset = 1.0f; // เพิ่มตัวแปรเพื่อปรับระดับความสูงของ Raycast
+    public float raycastHeightOffset = 1.0f; // เพิ่มตัวแปรเพื่อปรับระดับความสูง
+    public float interactRadius = 1.0f; // กำหนดรัศมีของวงกลม
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            // ปรับตำแหน่งเริ่มต้นของ Raycast ให้สูงขึ้นตามแกน Y
+            // ปรับตำแหน่งเริ่มต้นของการตรวจจับให้สูงขึ้นตามแกน Y
             Vector3 adjustedPosition = InteractorSource.position + Vector3.up * raycastHeightOffset;
 
-            Ray r = new Ray(adjustedPosition, InteractorSource.forward);
-            if (Physics.Raycast(r, out RaycastHit hitInfo, InteractRange))
+            // ใช้ OverlapSphere เพื่อตรวจหาวัตถุภายในรัศมีที่กำหนด
+            Collider[] hitColliders = Physics.OverlapSphere(adjustedPosition, interactRadius);
+
+            foreach (Collider hitCollider in hitColliders)
             {
-                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObject))
+                // ตรวจสอบว่าวัตถุชนใดๆ ที่อยู่ในรัศมีนั้นมีการ implement IInteractable หรือไม่
+                if (hitCollider.gameObject.TryGetComponent(out IInteractable interactObject))
                 {
                     interactObject.Interact();
+                    break; // หยุดหลังจาก interact กับวัตถุชิ้นแรก
                 }
             }
         }
-        Debug.DrawRay(InteractorSource.position + Vector3.up * raycastHeightOffset, InteractorSource.forward * InteractRange, Color.red);
+
+        // แสดงวงกลมใน Editor เพื่อให้เห็นบริเวณการตรวจจับ
+        Debug.DrawLine(InteractorSource.position + Vector3.up * raycastHeightOffset,InteractorSource.position + Vector3.up * raycastHeightOffset + InteractorSource.forward * InteractRange, Color.red);
+        Debug.DrawRay(InteractorSource.position + Vector3.up * raycastHeightOffset,Vector3.up * interactRadius, Color.green);
     }
 }

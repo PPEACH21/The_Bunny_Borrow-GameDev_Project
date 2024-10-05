@@ -10,33 +10,33 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                 case "Customer1(Clone)":
                     if (!SPAT1.hasSpawned)
                     {
-                       FindObjectOfType<SPAT1>().SpawnPrefab();
-                    Destroy(gameObject);
-                    Debug.Log("Success");
+                        FindObjectOfType<SPAT1>().SpawnPrefab();
+                        Destroy(gameObject);
+                        Debug.Log("Success");
                     }
                     break;
                 case "Customer2(Clone)":
                     if (!SPAT2.hasSpawned)
                     {
                         FindObjectOfType<SPAT2>().SpawnPrefab();
-                    Destroy(gameObject);
-                    Debug.Log("Success");
+                        Destroy(gameObject);
+                        Debug.Log("Success");
                     }
                 break;
                 case "Customer3(Clone)":
                     if (!SPAT3.hasSpawned)
                     {
                         FindObjectOfType<SPAT3>().SpawnPrefab();
-                    Destroy(gameObject);
-                    Debug.Log("Success");
+                        Destroy(gameObject);
+                        Debug.Log("Success");
                     }
                 break;
                 case "Customer4(Clone)":
                     if (!SPAT4.hasSpawned)
                     {
                         FindObjectOfType<SPAT4>().SpawnPrefab();
-                    Destroy(gameObject);
-                    Debug.Log("Success");
+                        Destroy(gameObject);
+                        Debug.Log("Success");
                     }
                 break;
                 default:

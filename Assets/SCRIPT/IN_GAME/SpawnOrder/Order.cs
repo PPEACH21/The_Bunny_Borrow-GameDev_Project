@@ -10,7 +10,7 @@ public class Order : MonoBehaviour, IInteractable
     public TextMeshPro textToShowWhenFalse; //text1
 
     private bool order = false; // ตัวแปร order เริ่มต้นเป็น false
-    private bool foodServed = false; // ตัวแปรเช็คว่าได้รับอาหารหรือยัง
+    //private bool foodServed = false; // ตัวแปรเช็คว่าได้รับอาหารหรือยัง
     public ParticleSystem fireworkEffect;
 
     void Start()
@@ -57,6 +57,7 @@ public class Order : MonoBehaviour, IInteractable
                     }
                     if (UpdateTextAfter.checkbill)
                     {
+                        Datainfo.score += 100;
                         Destroy(gameObject);
                         fireworkEffect.Play();
                         SPAT1.hasSpawned = false;
@@ -76,6 +77,7 @@ public class Order : MonoBehaviour, IInteractable
                     }
                     if (UpdateTextAfter2.checkbill)
                     {
+                        Datainfo.score += 200;
                         Destroy(gameObject);
                         fireworkEffect.Play();
                         SPAT2.hasSpawned = false;
@@ -95,6 +97,7 @@ public class Order : MonoBehaviour, IInteractable
                     }
                     if (UpdateTextAfter3.checkbill)
                     {
+                        Datainfo.score += 300;
                         Destroy(gameObject);
                         fireworkEffect.Play();
                         SPAT3.hasSpawned = false;
@@ -114,6 +117,7 @@ public class Order : MonoBehaviour, IInteractable
                     }
                     if (UpdateTextAfter4.checkbill)
                     {
+                        Datainfo.score += 400;
                         Destroy(gameObject);
                         fireworkEffect.Play();
                         SPAT4.hasSpawned = false;
