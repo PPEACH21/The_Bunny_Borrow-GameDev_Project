@@ -26,7 +26,6 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("LoadingScene");
         Datainfo.GoScene = 2;
         Time.timeScale = 1;
-        AudioManager.instance.musicSource.Pause();
     }
 
     public void Resume()

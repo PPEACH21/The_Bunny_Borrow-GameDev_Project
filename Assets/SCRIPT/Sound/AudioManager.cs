@@ -6,8 +6,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public SoundFX[] musicSound, sfxSound;
-    public AudioSource musicSource, sfxSource;
+    public SoundFX[] sfxSound;
+    public AudioSource sfxSource;
 
 
     private void Awake()
@@ -20,27 +20,6 @@ public class AudioManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
-    }
-
-    public void Start()
-    {
-        PlayMusic("theme");
-       
-    }
-    
-    
-    public void PlayMusic(string name)
-    {
-        SoundFX s = Array.Find(musicSound, x => x.name == name);
-        if (s == null)
-        {
-            Debug.Log("Sond not found");
-        }
-        else
-        {
-            musicSource.clip = s.clip;
-            musicSource.Play();
         }
     }
 
@@ -61,14 +40,7 @@ public class AudioManager : MonoBehaviour
     {
         sfxSource.mute= !sfxSource.mute;
     }
-    public void ToggleMusic()
-    {
-        musicSource.mute= !musicSource.mute;
-    }
-    public void MusicVolume(float volume)
-    {
-        musicSource.volume = volume;
-    }
+
     public void SFXVolume(float volume)
     {
         sfxSource.volume = volume;
