@@ -11,11 +11,10 @@ public class PlayerRotate : MonoBehaviour
     public Button w1, a1, s1, d1, shift1,e1;
 
     private Color defaultColor;
-    private Color pressedColor = Color.green;  // Change this to your preferred color for pressed buttons
+    private Color pressedColor = Color.green;
 
     private void Start()
     {
-        // Save the default color of the buttons
         defaultColor = w1.colors.normalColor;
     }
 
@@ -127,7 +126,6 @@ public class PlayerRotate : MonoBehaviour
 
     private void ResetButtonColors()
     {
-        // Reset all buttons to their default color
         ResetButtonColor(w1);
         ResetButtonColor(a1);
         ResetButtonColor(s1);
