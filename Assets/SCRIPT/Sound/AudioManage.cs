@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+public class AudioManage : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManage instance;
     public SoundFX[] sfxSound;
     public AudioSource sfxSource;
 
@@ -23,8 +23,8 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    
-    public void PlaySFX(string name) 
+
+    public void PlaySFX(string name)
     {
         SoundFX s = Array.Find(sfxSound, x => x.name == name);
         if (s == null)
@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
     }
     public void ToggleSFX()
     {
-        sfxSource.mute= !sfxSource.mute;
+        sfxSource.mute = !sfxSource.mute;
     }
 
     public void SFXVolume(float volume)
@@ -46,3 +46,6 @@ public class AudioManager : MonoBehaviour
         sfxSource.volume = volume;
     }
 }
+
+
+

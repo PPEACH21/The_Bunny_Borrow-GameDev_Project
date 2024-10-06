@@ -55,11 +55,11 @@ public class SpawnCustomer : MonoBehaviour
     private void SpawnPrefab(int prefabIndex)
     {
         GameObject newPrefab = Instantiate(prefab[prefabIndex], transform.position, Quaternion.identity);
-
         newPrefab.transform.Rotate(0f, 90f, 0f);
         PrefabMover mover = newPrefab.AddComponent<PrefabMover>();
         mover.SetTarget(target);
         mover.speed = Datainfo.speedcustomer;
+        AudioManage.instance.PlaySFX("Walkin");
     }
 }
 
