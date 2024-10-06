@@ -14,7 +14,7 @@ public class SpawnCustomer : MonoBehaviour
 
     private void Start()
     {
-        
+        Datainfo.score = 0;
         nextSpawnTime = Time.time + Datainfo.spawnInterval;
         availableIndices = Enumerable.Range(0, prefab.Length).ToList();
         // สร้าง prefab แบบสุ่มเลขทันทีที่เริ่มเกม
