@@ -7,6 +7,12 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text Timetext;
     string keeptime;
+
+    private void Start()
+    {
+        Datainfo.timeRemaining = Datainfo.timeDafault;
+    }
+
     void Update()
     {
         if(PauseMenu.checkRE == true)

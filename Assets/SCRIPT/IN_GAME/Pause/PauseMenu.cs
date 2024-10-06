@@ -23,9 +23,12 @@ public class PauseMenu : MonoBehaviour
 
     public void Home()
     {
-        SceneManager.LoadScene("LoadingScene");
         Datainfo.GoScene = 2;
         Time.timeScale = 1;
+        check = false;
+        checkRE = true;
+        Datainfo.timeRemaining = Datainfo.timeDafault;
+        SceneManager.LoadScene("LoadingScene");
     }
 
     public void Resume()
@@ -36,8 +39,16 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
+        ResetAll();
+        Time.timeScale = 1;
+        check = false;
+        checkRE = true;
+    }
+
+
+    public void ResetAll()
+    {
         Datainfo.timeRemaining = Datainfo.timeDafault;
-        SceneManager.LoadScene("GamePlay");
         SPAT1.hasSpawned = false;
         SPAT2.hasSpawned = false;
         SPAT3.hasSpawned = false;
@@ -50,17 +61,14 @@ public class PauseMenu : MonoBehaviour
         FSP2.hasSpawned = false;
         FSP3.hasSpawned = false;
         FSP4.hasSpawned = false;
-        UpdateTextAfter.checkbill=false;
+        UpdateTextAfter.checkbill = false;
         UpdateTextAfter2.checkbill = false;
         UpdateTextAfter3.checkbill = false;
         UpdateTextAfter4.checkbill = false;
         Datainfo.score = 0;
-        Time.timeScale = 1;
-        check = false;
-        checkRE = true;
+        SceneManager.LoadScene("GamePlay");
     }
 
-    
     public void ShowWinPanel()
     {   
         winPanel.SetActive(true); // แสดง winPanel

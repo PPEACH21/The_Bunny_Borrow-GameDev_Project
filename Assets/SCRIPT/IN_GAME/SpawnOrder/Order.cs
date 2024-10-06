@@ -13,6 +13,11 @@ public class Order : MonoBehaviour, IInteractable
     //private bool foodServed = false; // ตัวแปรเช็คว่าได้รับอาหารหรือยัง
     public ParticleSystem fireworkEffect;
 
+    private bool Statement1 = false;
+    private bool Statement2 = false;
+    private bool Statement3 = false;
+    private bool Statement4 = false;
+
     void Start()
     {
         // ตรวจสอบว่า TextMeshPro 3D ทั้งสองถูกกำหนดค่าใน Inspector หรือไม่
@@ -38,7 +43,48 @@ public class Order : MonoBehaviour, IInteractable
         textToShowWhenFalse.gameObject.SetActive(!order);
     }
 
-
+    IEnumerator DelayedDestroy(GameObject obj, float delay,float state)
+    {
+        AudioManage.instance.PlaySFX("Checkbin");
+        fireworkEffect.Play();
+        yield return new WaitForSeconds(delay);
+        Destroy(obj);
+        switch (state)
+        {
+            case 1:
+                Datainfo.score += 100;
+                SPAT1.hasSpawned = false;
+                UpdateTextAfter.checkbill = false;
+                SpawnOrder1.hasSpawned = false;
+                FSP1.hasSpawned = false;
+                Statement1 = false;
+                break;
+            case 2:
+                Datainfo.score += 200;
+                SPAT2.hasSpawned = false;
+                UpdateTextAfter2.checkbill = false;
+                SpawnOrder2.hasSpawned = false;
+                FSP2.hasSpawned = false;
+                Statement2 = false;
+                break;
+            case 3:
+                Datainfo.score += 300;
+                SPAT3.hasSpawned = false;
+                UpdateTextAfter3.checkbill = false;
+                SpawnOrder3.hasSpawned = false;
+                FSP3.hasSpawned = false;
+                Statement3 = false;
+                break;
+            case 4:
+                Datainfo.score += 400;
+                SPAT4.hasSpawned = false;
+                UpdateTextAfter4.checkbill = false;
+                SpawnOrder4.hasSpawned = false;
+                FSP4.hasSpawned = false;
+                Statement4 = false;
+                break;
+        }
+    }
 
     // เพิ่มฟังก์ชัน Interact() เพื่อรับ interact
     public void Interact()
@@ -52,19 +98,17 @@ public class Order : MonoBehaviour, IInteractable
                         order = true;
                         FindObjectOfType<SpawnOrder1>().SpawnPrefab();
                         UpdateTextVisibility(); // แสดง text2 หลังจาก interact ครั้งแรก
-                        AnimationRes.defaultAnimation = "waiting action";
+                        AnimationRes.defaultAnimation = "waiting action 0";
                         Debug.Log("Success");
                     }
-                    if (UpdateTextAfter.checkbill)
+                    if (UpdateTextAfter.checkbill && Statement1==false)
                     {
-                        Datainfo.score += 100;
-                        AudioManage.instance.PlaySFX("Checkbin");
-                        Destroy(gameObject);
-                        fireworkEffect.Play();
-                        SPAT1.hasSpawned = false;
-                        UpdateTextAfter.checkbill = false;
-                        SpawnOrder1.hasSpawned = false;
-                        FSP1.hasSpawned = false;
+                        Statement1 = true;
+                        AnimationRes.defaultAnimation = "Suscess";
+                        //AnimationRes.defaultAnimation = "Success";
+                        //Destroy(gameObject, 1);
+                        StartCoroutine(DelayedDestroy(gameObject, 1f,1f));
+                        
                     }
                 break;
                 case "Spawn At Table 2(Clone)":
@@ -73,19 +117,17 @@ public class Order : MonoBehaviour, IInteractable
                         order = true;
                         FindObjectOfType<SpawnOrder2>().SpawnPrefab();
                         UpdateTextVisibility(); // แสดง text2 หลังจาก interact ครั้งแรก
-                        AnimationRes2.defaultAnimation = "waiting action";
+                        AnimationRes2.defaultAnimation = "waiting action 0";
                         Debug.Log("Success");
                     }
-                    if (UpdateTextAfter2.checkbill)
+                    if (UpdateTextAfter2.checkbill &&  Statement2 == false)
                     {
-                        Datainfo.score += 200;
-                        AudioManage.instance.PlaySFX("Checkbin");
-                        Destroy(gameObject);
-                        fireworkEffect.Play();
-                        SPAT2.hasSpawned = false;
-                        UpdateTextAfter2.checkbill = false;
-                        SpawnOrder2.hasSpawned = false;
-                        FSP2.hasSpawned =  false;
+                        Statement2 = true;
+                        AnimationRes2.defaultAnimation = "Suscess";
+                        //AnimationRes2.defaultAnimation = "Success";
+                        //Destroy(gameObject, 1);
+                        StartCoroutine(DelayedDestroy(gameObject, 1f,2f));
+                        
                     }
                 break;
                 case "Spawn At Table 3(Clone)":
@@ -94,19 +136,17 @@ public class Order : MonoBehaviour, IInteractable
                         order = true;
                         FindObjectOfType<SpawnOrder3>().SpawnPrefab();
                         UpdateTextVisibility(); // แสดง text2 หลังจาก interact ครั้งแรก
-                        AnimationRes3.defaultAnimation = "waiting action";
+                        AnimationRes3.defaultAnimation = "waiting action 0";
                         Debug.Log("Success");
                     }
-                    if (UpdateTextAfter3.checkbill)
+                    if (UpdateTextAfter3.checkbill && Statement3 == false)
                     {
-                        Datainfo.score += 300;
-                        AudioManage.instance.PlaySFX("Checkbin");
-                        Destroy(gameObject);
-                        fireworkEffect.Play();
-                        SPAT3.hasSpawned = false;
-                        UpdateTextAfter3.checkbill = false;
-                        SpawnOrder3.hasSpawned = false;
-                        FSP3.hasSpawned = false;
+                        Statement3 = true;
+                        AnimationRes3.defaultAnimation = "Suscess";
+                        //AnimationRes3.defaultAnimation = "Success";
+                        //Destroy(gameObject,1);
+                        StartCoroutine(DelayedDestroy(gameObject, 1f,3f));
+                        
                     }
                 break;
                 case "Spawn At Table 4(Clone)":
@@ -115,19 +155,17 @@ public class Order : MonoBehaviour, IInteractable
                         order = true;
                         FindObjectOfType<SpawnOrder4>().SpawnPrefab();
                         UpdateTextVisibility(); // แสดง text2 หลังจาก interact ครั้งแรก
-                        AnimationRes4.defaultAnimation = "waiting action";
+                        AnimationRes4.defaultAnimation = "waiting action 0";
                         Debug.Log("Success");
                     }
-                    if (UpdateTextAfter4.checkbill)
+                    if (UpdateTextAfter4.checkbill && Statement4 == false)
                     {
-                        Datainfo.score += 400;
-                        AudioManage.instance.PlaySFX("Checkbin");
-                        Destroy(gameObject);
-                        fireworkEffect.Play();
-                        SPAT4.hasSpawned = false;
-                        UpdateTextAfter4.checkbill = false;
-                        SpawnOrder4.hasSpawned = false;
-                        FSP4.hasSpawned = false;
+                        Statement4 = true;
+                        AnimationRes4.defaultAnimation = "Suscess";
+                        //AnimationRes4.defaultAnimation = "Success";
+                        //Destroy(gameObject, 1);
+                        StartCoroutine(DelayedDestroy(gameObject, 1f,4f));
+                        
                     }
                 break;
                 default:

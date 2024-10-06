@@ -13,6 +13,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                         FindObjectOfType<SPAT1>().SpawnPrefab();
                         Destroy(gameObject);
                         Debug.Log("Success");
+                        AnimationRes.defaultAnimation = "Showhand";
                     }
                     break;
                 case "Customer2(Clone)":
@@ -21,6 +22,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                         FindObjectOfType<SPAT2>().SpawnPrefab();
                         Destroy(gameObject);
                         Debug.Log("Success");
+                        AnimationRes2.defaultAnimation = "Showhand";
                     }
                 break;
                 case "Customer3(Clone)":
@@ -29,6 +31,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                         FindObjectOfType<SPAT3>().SpawnPrefab();
                         Destroy(gameObject);
                         Debug.Log("Success");
+                        AnimationRes3.defaultAnimation = "Showhand";
                     }
                 break;
                 case "Customer4(Clone)":
@@ -37,6 +40,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                         FindObjectOfType<SPAT4>().SpawnPrefab();
                         Destroy(gameObject);
                         Debug.Log("Success");
+                        AnimationRes4.defaultAnimation = "Showhand";
                     }
                 break;
                 default:

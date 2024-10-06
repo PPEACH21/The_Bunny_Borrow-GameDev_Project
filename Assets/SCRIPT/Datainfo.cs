@@ -21,6 +21,6 @@ public class Datainfo : MonoBehaviour
     public static int Score = 0;
 
     //Timer Remaining
-    public static float timeRemaining = 30f;
-    public static float timeDafault = timeRemaining;
+    public static float timeDafault = 10f;
+    public static float timeRemaining = timeDafault;
 }
