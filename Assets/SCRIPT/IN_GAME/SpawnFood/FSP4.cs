@@ -14,7 +14,7 @@ public class FSP4 : MonoBehaviour
             // ใช้ transform.position และ transform.rotation ของ prefabToSpawn เอง
             Instantiate(prefabToSpawn, prefabToSpawn.transform.position, prefabToSpawn.transform.rotation);
             hasSpawned = true;
-            AudioManage.instance.PlaySFX("Food");
+            AudioManage.instance.PlaySFX("FoodToOrder");
         }
     }
 }

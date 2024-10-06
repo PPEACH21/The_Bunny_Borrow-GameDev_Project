@@ -54,6 +54,7 @@ public class PauseMenu : MonoBehaviour
         UpdateTextAfter2.checkbill = false;
         UpdateTextAfter3.checkbill = false;
         UpdateTextAfter4.checkbill = false;
+        Datainfo.score = 0;
         Time.timeScale = 1;
         check = false;
         checkRE = true;
