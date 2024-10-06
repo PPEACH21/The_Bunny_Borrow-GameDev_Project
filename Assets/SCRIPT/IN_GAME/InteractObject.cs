@@ -10,9 +10,9 @@ interface IInteractable
 public class InteractObject : MonoBehaviour
 {
     public Transform InteractorSource;
-    public float InteractRange;
-    public float raycastHeightOffset = 1.0f; // เพิ่มตัวแปรเพื่อปรับระดับความสูง
-    public float interactRadius = 1.0f; // กำหนดรัศมีของวงกลม
+    public float InteractRange = 8f;
+    public float raycastHeightOffset = 10f; // เพิ่มตัวแปรเพื่อปรับระดับความสูง
+    public float interactRadius = 8.5f; // กำหนดรัศมีของวงกลม
 
     void Update()
     {
