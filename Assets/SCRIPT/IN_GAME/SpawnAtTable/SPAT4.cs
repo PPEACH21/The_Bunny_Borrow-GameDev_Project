@@ -12,6 +12,7 @@ public class SPAT4 : MonoBehaviour
         {
             Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
             hasSpawned = true;
+            AudioManage.instance.PlaySFX("Welcome");
         }
     }
 }

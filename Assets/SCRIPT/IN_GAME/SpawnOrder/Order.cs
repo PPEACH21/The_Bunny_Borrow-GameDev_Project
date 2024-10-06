@@ -58,6 +58,7 @@ public class Order : MonoBehaviour, IInteractable
                     if (UpdateTextAfter.checkbill)
                     {
                         Datainfo.score += 100;
+                        AudioManage.instance.PlaySFX("Checkbin");
                         Destroy(gameObject);
                         fireworkEffect.Play();
                         SPAT1.hasSpawned = false;
@@ -78,6 +79,7 @@ public class Order : MonoBehaviour, IInteractable
                     if (UpdateTextAfter2.checkbill)
                     {
                         Datainfo.score += 200;
+                        AudioManage.instance.PlaySFX("Checkbin");
                         Destroy(gameObject);
                         fireworkEffect.Play();
                         SPAT2.hasSpawned = false;
@@ -98,6 +100,7 @@ public class Order : MonoBehaviour, IInteractable
                     if (UpdateTextAfter3.checkbill)
                     {
                         Datainfo.score += 300;
+                        AudioManage.instance.PlaySFX("Checkbin");
                         Destroy(gameObject);
                         fireworkEffect.Play();
                         SPAT3.hasSpawned = false;
@@ -118,6 +121,7 @@ public class Order : MonoBehaviour, IInteractable
                     if (UpdateTextAfter4.checkbill)
                     {
                         Datainfo.score += 400;
+                        AudioManage.instance.PlaySFX("Checkbin");
                         Destroy(gameObject);
                         fireworkEffect.Play();
                         SPAT4.hasSpawned = false;

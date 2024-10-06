@@ -12,6 +12,7 @@ public class SpawnOrder2 : MonoBehaviour
         {
             Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
             hasSpawned = true;
+            AudioManage.instance.PlaySFX("FoodToOrder");
         }
     }
 }
