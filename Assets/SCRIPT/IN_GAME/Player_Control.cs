@@ -1,110 +1,128 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class Player_Control : MonoBehaviour
 {
 
     public Animator animator;
+    
+    public Rigidbody rb;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
 
+    int x, z;
+    float rotate = -180;
+    float rotationSpeed = 20f;
     private void Update()
     {
         if (Input.GetKey(KeyCode.W))
         {
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
-                transform.rotation = Quaternion.Euler(0,45,0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, 45, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(100, 100);
             }
             else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
             {
-                transform.rotation = Quaternion.Euler(0,-45,0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, -45, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(-100, 100);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, 0, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(0, 100);
             }
-
         }
         else if (Input.GetKey(KeyCode.A))
         {
             if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
             {
-                transform.rotation = Quaternion.Euler(0, -45, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, -45, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(-100, 100);
             }
             else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
             {
-                transform.rotation = Quaternion.Euler(0, -135, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, -135, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(-100, -100);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, -90, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, -90, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(-100, 0);
             }
         }
         else if (Input.GetKey(KeyCode.S))
         {
             if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
             {
-                transform.rotation = Quaternion.Euler(0, -135, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, -135, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(-100, -100);
             }
             else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
             {
-                transform.rotation = Quaternion.Euler(0, 135, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, 135, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(100, -100);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, -180, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, -180, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(0, -100);
             }
         }
         else if (Input.GetKey(KeyCode.D))
         {
             if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
             {
-                transform.rotation = Quaternion.Euler(0, 135, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, 135, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(100, -100);
             }
             else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W))
             {
-                transform.rotation = Quaternion.Euler(0, 45, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, 45, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(100, 100);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, 90, 0);
-                movement();
+                rotate = Mathf.LerpAngle(rotate, 90, rotationSpeed * Time.deltaTime);
+                transform.rotation = Quaternion.Euler(0, rotate, 0);
+                movement(100, 0);
             }
         }
         else
         {
+            rb.velocity = Vector3.zero;
             animator.Play("waiting action");
         }
 
     }
 
-    private void run()
+    private void movement(int x,int z)
     {
-        
-    }
-
-    private void movement()
-    {
-        if(Input.GetKey(KeyCode.LeftShift))
+        Vector3 moveDirection = new Vector3(x, 0, z).normalized;
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * (Datainfo.speedplayer + 10f));
+            rb.velocity = moveDirection * 40f;
             animator.Play("run");
         }
         else
         {
-            transform.Translate(Vector3.forward * Time.deltaTime * Datainfo.speedplayer);
+            rb.velocity = moveDirection * 20f;
             animator.Play("walk");
         }
     }
