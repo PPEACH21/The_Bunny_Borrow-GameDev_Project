@@ -11,7 +11,7 @@ public class PlayerRotate : MonoBehaviour
     public Button w1, a1, s1, d1, shift1,e1;
 
     private Color defaultColor;
-    private Color pressedColor = Color.green;
+    private Color pressedColor = Color.gray;
 
     private void Start()
     {
