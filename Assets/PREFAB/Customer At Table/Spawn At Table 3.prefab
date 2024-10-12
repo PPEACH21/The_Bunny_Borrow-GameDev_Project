@@ -5071,7 +5071,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToShowCheckbill: {fileID: 8477654989676578007}
-  fireworkEffect: {fileID: 8064567837282063628}
 --- !u!65 &2929232590150436118
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5381,6 +5380,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1744327733626680252}
     m_Modifications:
+    - target: {fileID: 583685396873683957, guid: 85f5cca848106cf489e7d5edd323a9ea, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.92
+      objectReference: {fileID: 0}
     - target: {fileID: 3973262254793581098, guid: 85f5cca848106cf489e7d5edd323a9ea, type: 3}
       propertyPath: m_Name
       value: Customer (2)
@@ -5391,11 +5394,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4352742597635094672, guid: 85f5cca848106cf489e7d5edd323a9ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 4352742597635094672, guid: 85f5cca848106cf489e7d5edd323a9ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.1
+      value: 4.9
       objectReference: {fileID: 0}
     - target: {fileID: 4352742597635094672, guid: 85f5cca848106cf489e7d5edd323a9ea, type: 3}
       propertyPath: m_LocalRotation.w
