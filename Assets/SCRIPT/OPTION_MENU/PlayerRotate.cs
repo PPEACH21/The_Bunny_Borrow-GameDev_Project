@@ -11,7 +11,7 @@ public class PlayerRotate : MonoBehaviour
     public Button w1, a1, s1, d1, shift1,e1;
 
     private Color defaultColor;
-    private Color pressedColor = Color.green;
+    private Color pressedColor = Color.gray;
 
     private void Start()
     {
@@ -30,42 +30,44 @@ public class PlayerRotate : MonoBehaviour
             ChangeButtonColor(w1);
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
-                ChangeButtonColor(d1);
-                transform.rotation = Quaternion.Euler(0,45,0);
-                movement();
+                ChangeButtonColor(d1);              
             }
             else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
             {
                 ChangeButtonColor(a1);
-                transform.rotation = Quaternion.Euler(0,-45,0);
-                movement();
+           
+            }
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                animator.Play("W0");
+                ChangeButtonColor(shift1);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, 0, 0);
-                movement();
+                animator.Play("W");
             }
-
         }
         else if (Input.GetKey(KeyCode.A))
         {
+            
             ChangeButtonColor(a1);
             if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
             {
                 ChangeButtonColor(w1);
-                transform.rotation = Quaternion.Euler(0, -45, 0);
-                movement();
+                
             }
             else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
             {
-                ChangeButtonColor(s1);
-                transform.rotation = Quaternion.Euler(0, -135, 0);
-                movement();
+                ChangeButtonColor(s1);         
+            }
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                animator.Play("A0");
+                ChangeButtonColor(shift1);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, -90, 0);
-                movement();
+                animator.Play("A");
             }
         }
         else if (Input.GetKey(KeyCode.S))
@@ -73,20 +75,20 @@ public class PlayerRotate : MonoBehaviour
             ChangeButtonColor(s1);
             if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
             {
-                ChangeButtonColor(a1);
-                transform.rotation = Quaternion.Euler(0, -135, 0);
-                movement();
+                ChangeButtonColor(a1);       
             }
             else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
             {
-                ChangeButtonColor(d1);
-                transform.rotation = Quaternion.Euler(0, 135, 0);
-                movement();
+                ChangeButtonColor(d1);           
+            }
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                animator.Play("S0");
+                ChangeButtonColor(shift1);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, -180, 0);
-                movement();
+                animator.Play("S");
             }
         }
         else if (Input.GetKey(KeyCode.D))
@@ -94,25 +96,25 @@ public class PlayerRotate : MonoBehaviour
             ChangeButtonColor(d1);
             if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
             {
-                ChangeButtonColor(s1);
-                transform.rotation = Quaternion.Euler(0, 135, 0);
-                movement();
+                ChangeButtonColor(s1);               
             }
             else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W))
             {
-                ChangeButtonColor(w1);
-                transform.rotation = Quaternion.Euler(0, 45, 0);
-                movement();
+                ChangeButtonColor(w1);    
+            }
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            {
+                animator.Play("D0");
+                ChangeButtonColor(shift1);
             }
             else
             {
-                transform.rotation = Quaternion.Euler(0, 90, 0);
-                movement();
+                animator.Play("D");
             }
         }
         else
         {
-            animator.Play("waiting action");
+            animator.Play("Stand");
         }
 
     }
@@ -139,21 +141,6 @@ public class PlayerRotate : MonoBehaviour
         ColorBlock colorBlock = button.colors;
         colorBlock.normalColor = defaultColor;
         button.colors = colorBlock;
-    }
-
-    private void movement()
-    {
-        if(Input.GetKey(KeyCode.LeftShift))
-        {
-            //transform.Translate(Vector3.forward * Time.deltaTime * (Datainfo.speedplayer + 10f));
-            animator.Play("run");
-            ChangeButtonColor(shift1);
-        }
-        else
-        {
-            //transform.Translate(Vector3.forward * Time.deltaTime * Datainfo.speedplayer);
-            animator.Play("walk");
-        }
     }
 
 }
