@@ -43,6 +43,10 @@ public class AutoDestroy : MonoBehaviour
 
         if (timer <= 0)
         {
+            if(Datainfo.score-50 >= 0)
+            {
+                Datainfo.score -= 50;
+            }
             Destroy(gameObject);
         }
     }

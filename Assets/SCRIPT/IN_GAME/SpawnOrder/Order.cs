@@ -52,7 +52,7 @@ public class Order : MonoBehaviour, IInteractable
         switch (state)
         {
             case 1:
-                Datainfo.score += 100;
+                Datainfo.score += 200;
                 SPAT1.hasSpawned = false;
                 UpdateTextAfter.checkbill = false;
                 SpawnOrder1.hasSpawned = false;
@@ -68,7 +68,7 @@ public class Order : MonoBehaviour, IInteractable
                 Statement2 = false;
                 break;
             case 3:
-                Datainfo.score += 300;
+                Datainfo.score += 200;
                 SPAT3.hasSpawned = false;
                 UpdateTextAfter3.checkbill = false;
                 SpawnOrder3.hasSpawned = false;
@@ -76,7 +76,7 @@ public class Order : MonoBehaviour, IInteractable
                 Statement3 = false;
                 break;
             case 4:
-                Datainfo.score += 400;
+                Datainfo.score += 200;
                 SPAT4.hasSpawned = false;
                 UpdateTextAfter4.checkbill = false;
                 SpawnOrder4.hasSpawned = false;
