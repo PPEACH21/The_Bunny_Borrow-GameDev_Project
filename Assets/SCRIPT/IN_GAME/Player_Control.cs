@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using UnityEditor;
 using UnityEngine;
 
 public class Player_Control : MonoBehaviour
 {
 
     public Animator animator;
-    
+    float speed = 40f;
     public Rigidbody rb;
 
     private void Start()
@@ -20,6 +21,15 @@ public class Player_Control : MonoBehaviour
     float rotationSpeed = 20f;
     private void Update()
     {
+        if(Datainfo.timeRemaining < 30)
+        {
+            speed = 50f;
+        }
+        else
+        {
+            speed = 40f;
+        }
+
         if (Input.GetKey(KeyCode.W))
         {
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
@@ -117,12 +127,12 @@ public class Player_Control : MonoBehaviour
         Vector3 moveDirection = new Vector3(x, 0, z).normalized;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            rb.velocity = moveDirection * 40f;
+            rb.velocity = moveDirection * (speed+20f);
             animator.Play("run");
         }
         else
         {
-            rb.velocity = moveDirection * 20f;
+            rb.velocity = moveDirection * speed;
             animator.Play("walk");
         }
     }
