@@ -8,7 +8,6 @@ public class Player_Control : MonoBehaviour
 {
 
     public Animator animator;
-    float speed = 40f;
     public Rigidbody rb;
 
     private void Start()
@@ -23,11 +22,11 @@ public class Player_Control : MonoBehaviour
     {
         if(Datainfo.timeRemaining < 30)
         {
-            speed = 50f;
+            Datainfo.speedplayer = 50f;
         }
         else
         {
-            speed = 40f;
+            Datainfo.speedplayer = 40f;
         }
 
         if (Input.GetKey(KeyCode.W))
@@ -127,12 +126,12 @@ public class Player_Control : MonoBehaviour
         Vector3 moveDirection = new Vector3(x, 0, z).normalized;
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            rb.velocity = moveDirection * (speed+20f);
+            rb.velocity = moveDirection * (Datainfo.speedplayer + 20f);
             animator.Play("run");
         }
         else
         {
-            rb.velocity = moveDirection * speed;
+            rb.velocity = moveDirection * Datainfo.speedplayer;
             animator.Play("walk");
         }
     }
