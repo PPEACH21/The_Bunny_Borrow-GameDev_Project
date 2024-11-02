@@ -181,11 +181,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4630713750094434399}
   - component: {fileID: -6264538306034724523}
-  - component: {fileID: -5759773570033467844}
-  - component: {fileID: 1600655173347129483}
   - component: {fileID: -4593016632736086901}
+  - component: {fileID: 3038135467225833996}
+  - component: {fileID: 5106408606656845703}
   m_Layer: 0
-  m_Name: Spawn At Table 1
+  m_Name: Spawn At Table 3_1
   m_TagString: ToDelete
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -224,32 +224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToShowWhenFalse: {fileID: 221271266019082991}
   fireworkEffect: {fileID: 3695458403546763377}
---- !u!114 &-5759773570033467844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4454395758236277746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66c2fbd98be727e4794fb949fb53c871, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textToShowCheckbill: {fileID: 6816754483148819424}
---- !u!114 &1600655173347129483
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4454395758236277746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d97ddfc464cd65b4e98fece536b64656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 1185843114129526121}
 --- !u!65 &-4593016632736086901
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -271,6 +245,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 14, y: 20.508692, z: 17}
   m_Center: {x: 0, y: 9.754346, z: -0.0786}
+--- !u!114 &3038135467225833996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454395758236277746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f579860895ab949af6eeb346808cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1185843114129526121}
+--- !u!114 &5106408606656845703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4454395758236277746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7678898b60fd374793234afd50b11bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textToShowCheckbill: {fileID: 6816754483148819424}
 --- !u!1 &5053766347141363910
 GameObject:
   m_ObjectHideFlags: 0

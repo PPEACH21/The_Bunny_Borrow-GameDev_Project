@@ -23,4 +23,9 @@ public class Datainfo : MonoBehaviour
     //Timer Remaining
     public static float timeDafault = 180f;
     public static float timeRemaining = timeDafault;
+
+    public static int CountTable1 = 0;
+    public static int CountTable2 = 0;
+    public static int CountTable3 = 0;
+    public static int CountTable4 = 0;
 }

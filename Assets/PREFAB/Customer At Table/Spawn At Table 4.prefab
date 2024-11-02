@@ -5073,7 +5073,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToShowCheckbill: {fileID: 6787891157573112214}
-  fireworkEffect: {fileID: 1073001085245710225}
 --- !u!65 &1184368162158118724
 BoxCollider:
   m_ObjectHideFlags: 0
