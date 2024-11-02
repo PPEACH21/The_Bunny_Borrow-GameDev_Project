@@ -2,7 +2,7 @@
 
 public class AutoDestroy : MonoBehaviour
 {
-    public float lifetime = 10f;
+    public float lifetime = 20f;
     public SpriteRenderer spriteRenderer; // SpriteRenderer สำหรับแสดงรูป
     public Sprite[] sprites; // Array ของ Sprite ทั้ง 3 รูป
 

@@ -108,8 +108,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5090,8 +5090,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.755478, y: 26.552101, z: 18.884796}
-  m_Center: {x: 1.0424728, y: 12.776051, z: -3.2597542}
+  m_Size: {x: 14.328049, y: 26.552101, z: 15.485741}
+  m_Center: {x: 1.0368652, y: 12.776051, z: 0.5723877}
 --- !u!114 &6159304019071413317
 MonoBehaviour:
   m_ObjectHideFlags: 0
