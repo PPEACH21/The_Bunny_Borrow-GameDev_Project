@@ -58,6 +58,7 @@ public class Order : MonoBehaviour, IInteractable
                 SpawnOrder1.hasSpawned = false;
                 FSP1.hasSpawned = false;
                 Statement1 = false;
+                AnimationRes.defaultAnimation = "Showhand";
                 break;
             case 2:
                 Datainfo.score += 200;
@@ -66,6 +67,7 @@ public class Order : MonoBehaviour, IInteractable
                 SpawnOrder2.hasSpawned = false;
                 FSP2.hasSpawned = false;
                 Statement2 = false;
+                AnimationRes2.defaultAnimation = "Showhand";
                 break;
             case 3:
                 Datainfo.score += 200;
@@ -74,6 +76,7 @@ public class Order : MonoBehaviour, IInteractable
                 SpawnOrder3.hasSpawned = false;
                 FSP3.hasSpawned = false;
                 Statement3 = false;
+                AnimationRes3.defaultAnimation = "Showhand";
                 break;
             case 4:
                 Datainfo.score += 200;
@@ -82,6 +85,7 @@ public class Order : MonoBehaviour, IInteractable
                 SpawnOrder4.hasSpawned = false;
                 FSP4.hasSpawned = false;
                 Statement4 = false;
+                AnimationRes4.defaultAnimation = "Showhand";
                 break;
         }
     }
@@ -92,8 +96,8 @@ public class Order : MonoBehaviour, IInteractable
             Debug.Log(gameObject.name);
             switch (gameObject.name)
             {
-                case "Spawn At Table 1(Clone)":
-                    if (!SpawnOrder1.hasSpawned)
+                    case "TB1":
+                        if (!SpawnOrder1.hasSpawned)
                     {
                         order = true;
                         FindObjectOfType<SpawnOrder1>().SpawnPrefab();
@@ -105,13 +109,11 @@ public class Order : MonoBehaviour, IInteractable
                     {
                         Statement1 = true;
                         AnimationRes.defaultAnimation = "Suscess";
-                        //AnimationRes.defaultAnimation = "Success";
-                        //Destroy(gameObject, 1);
                         StartCoroutine(DelayedDestroy(gameObject, 1f,1f));
                         
                     }
                 break;
-                case "Spawn At Table 2(Clone)":
+                case "TB2":
                     if (!SpawnOrder2.hasSpawned)
                     {
                         order = true;
@@ -124,13 +126,11 @@ public class Order : MonoBehaviour, IInteractable
                     {
                         Statement2 = true;
                         AnimationRes2.defaultAnimation = "Suscess";
-                        //AnimationRes2.defaultAnimation = "Success";
-                        //Destroy(gameObject, 1);
                         StartCoroutine(DelayedDestroy(gameObject, 1f,2f));
                         
                     }
                 break;
-                case "Spawn At Table 3(Clone)":
+                case "TB3":
                     if (!SpawnOrder3.hasSpawned)
                     {
                         order = true;
@@ -143,13 +143,11 @@ public class Order : MonoBehaviour, IInteractable
                     {
                         Statement3 = true;
                         AnimationRes3.defaultAnimation = "Suscess";
-                        //AnimationRes3.defaultAnimation = "Success";
-                        //Destroy(gameObject,1);
                         StartCoroutine(DelayedDestroy(gameObject, 1f,3f));
                         
                     }
                 break;
-                case "Spawn At Table 4(Clone)":
+                case "TB4":
                     if (!SpawnOrder4.hasSpawned)
                     {
                         order = true;
@@ -162,8 +160,6 @@ public class Order : MonoBehaviour, IInteractable
                     {
                         Statement4 = true;
                         AnimationRes4.defaultAnimation = "Suscess";
-                        //AnimationRes4.defaultAnimation = "Success";
-                        //Destroy(gameObject, 1);
                         StartCoroutine(DelayedDestroy(gameObject, 1f,4f));
                         
                     }

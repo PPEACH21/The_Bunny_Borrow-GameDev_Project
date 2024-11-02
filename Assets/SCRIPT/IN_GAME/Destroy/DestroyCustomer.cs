@@ -8,39 +8,107 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
             switch (gameObject.name)
             {
                 case "Customer1(Clone)":
-                    if (!SPAT1.hasSpawned)
-                    {
-                        FindObjectOfType<SPAT1>().SpawnPrefab();
-                        Destroy(gameObject);
-                        Debug.Log("Success");
-                        AnimationRes.defaultAnimation = "Showhand";
-                    }
-                    break;
+                if (!SPAT1.hasSpawned)
+                {
+                    FindObjectOfType<SPAT1>().SpawnPrefab();
+                    Destroy(gameObject);
+                    Debug.Log("Success");
+                    AnimationRes.defaultAnimation = "Showhand";
+                    Datainfo.CountTable1 = 1;
+                }
+                else if (!SPAT2.hasSpawned)
+                {
+                    FindObjectOfType<SPAT2>().SpawnPrefab(1);
+                    Destroy(gameObject);
+                    Debug.Log("Success");
+                    AnimationRes.defaultAnimation = "Showhand";
+                    Datainfo.CountTable2 = 1;
+                }
+                else if (!SPAT3.hasSpawned)
+                {
+                    FindObjectOfType<SPAT3>().SpawnPrefab(1);
+                    Destroy(gameObject);
+                    Debug.Log("Success");
+                    AnimationRes.defaultAnimation = "Showhand";
+                    Datainfo.CountTable3 = 1;
+                }
+                else if (!SPAT4.hasSpawned)
+                {
+                    FindObjectOfType<SPAT4>().SpawnPrefab(1);
+                    Destroy(gameObject);
+                    Debug.Log("Success");
+                    AnimationRes.defaultAnimation = "Showhand";
+                    Datainfo.CountTable4 = 1;
+                }
+                else
+                {
+                    Debug.Log("NOBODY S1");
+                }
+                break;
                 case "Customer2(Clone)":
                     if (!SPAT2.hasSpawned)
                     {
-                        FindObjectOfType<SPAT2>().SpawnPrefab();
+                        FindObjectOfType<SPAT2>().SpawnPrefab(2);
                         Destroy(gameObject);
                         Debug.Log("Success");
                         AnimationRes2.defaultAnimation = "Showhand";
+                        Datainfo.CountTable2 = 2;
+                    }
+                    else if (!SPAT3.hasSpawned)
+                    {
+                        FindObjectOfType<SPAT3>().SpawnPrefab(2);
+                        Destroy(gameObject);
+                        Debug.Log("Success");
+                        AnimationRes2.defaultAnimation = "Showhand";
+                        Datainfo.CountTable3 = 2;
+                    }
+                    else if (!SPAT4.hasSpawned)
+                    {
+                        FindObjectOfType<SPAT4>().SpawnPrefab(2);
+                        Destroy(gameObject);
+                        Debug.Log("Success");
+                        AnimationRes2.defaultAnimation = "Showhand";
+                        Datainfo.CountTable4 = 2;
+                    }
+                    else
+                    {
+                        Debug.Log("NOBODY S2");
                     }
                 break;
                 case "Customer3(Clone)":
                     if (!SPAT3.hasSpawned)
                     {
-                        FindObjectOfType<SPAT3>().SpawnPrefab();
+                        FindObjectOfType<SPAT3>().SpawnPrefab(3);
                         Destroy(gameObject);
                         Debug.Log("Success");
                         AnimationRes3.defaultAnimation = "Showhand";
+                        Datainfo.CountTable3 = 3;
+                    }
+                    else if (!SPAT4.hasSpawned)
+                    {
+                        FindObjectOfType<SPAT4>().SpawnPrefab(3);
+                        Destroy(gameObject);
+                        Debug.Log("Success");
+                        AnimationRes3.defaultAnimation = "Showhand";
+                        Datainfo.CountTable4 = 3;
+                    }
+                    else
+                    {
+                        Debug.Log("NOBODY S3");
                     }
                 break;
                 case "Customer4(Clone)":
                     if (!SPAT4.hasSpawned)
                     {
-                        FindObjectOfType<SPAT4>().SpawnPrefab();
+                        FindObjectOfType<SPAT4>().SpawnPrefab(4);
                         Destroy(gameObject);
                         Debug.Log("Success");
                         AnimationRes4.defaultAnimation = "Showhand";
+                        Datainfo.CountTable4 = 4;
+                    }
+                    else
+                    {
+                        Debug.Log("NOBODY S3");
                     }
                 break;
                 default:

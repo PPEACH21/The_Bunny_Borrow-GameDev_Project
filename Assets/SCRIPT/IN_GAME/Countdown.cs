@@ -12,26 +12,26 @@ public class Countdown : MonoBehaviour
         {
             switch (gameObject.name)
             {
-                case "Carrot 1(Clone)":
+                case "FSTB1":
                         Destroy(gameObject);
                         AnimationRes.defaultAnimation = "Showhand";
                         UpdateTextAfter.checkbill = true;
                         
                         
                     break;
-                case "Carrot 2(Clone)":
+                case "FSTB2":
                         Destroy(gameObject);
                         AnimationRes2.defaultAnimation = "Showhand";
                         UpdateTextAfter2.checkbill = true;
                         
                     break;
-                case "Carrot 3(Clone)":
+                case "FSTB3":
                         Destroy(gameObject);
                         AnimationRes3.defaultAnimation = "Showhand";
                         UpdateTextAfter3.checkbill = true;
                         
                     break;
-                case "Carrot 4(Clone)":
+                case "FSTB4":
                         Destroy(gameObject);
                         AnimationRes4.defaultAnimation = "Showhand";
                         UpdateTextAfter4.checkbill = true;

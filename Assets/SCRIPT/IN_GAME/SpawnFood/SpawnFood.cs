@@ -9,7 +9,7 @@ public class SpawnFood : MonoBehaviour, IInteractable
         Debug.Log(gameObject.name);
         switch (gameObject.name)
         {
-            case "Carrot 1(Clone)":
+            case "FTB1":
                 if (!FSP1.hasSpawned)
                 {
                     FindObjectOfType<FSP1>().SpawnPrefab();
@@ -18,7 +18,7 @@ public class SpawnFood : MonoBehaviour, IInteractable
                     AnimationRes.defaultAnimation = "Eat";
                 }
                 break;
-            case "Carrot 2(Clone)":
+            case "FTB2":
                 if (!FSP2.hasSpawned)
                 {
                     FindObjectOfType<FSP2>().SpawnPrefab();
@@ -27,7 +27,7 @@ public class SpawnFood : MonoBehaviour, IInteractable
                     AnimationRes2.defaultAnimation = "Eat";
                 }
                 break;
-            case "Carrot 3(Clone)":
+            case "FTB3":
                 if (!FSP3.hasSpawned)
                 {
                     FindObjectOfType<FSP3>().SpawnPrefab();
@@ -36,7 +36,7 @@ public class SpawnFood : MonoBehaviour, IInteractable
                     AnimationRes3.defaultAnimation = "Eat";
                 }
                 break;
-            case "Carrot 4(Clone)":
+            case "FTB4":
                 if (!FSP4.hasSpawned)
                 {
                     FindObjectOfType<FSP4>().SpawnPrefab();

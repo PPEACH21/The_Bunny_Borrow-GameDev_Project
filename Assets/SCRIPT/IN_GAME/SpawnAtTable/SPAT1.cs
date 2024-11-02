@@ -10,7 +10,8 @@ public class SPAT1 : MonoBehaviour
     {
         if (!hasSpawned)
         {
-            Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+            GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+            spawnedObject.name = "TB1";
             hasSpawned = true;
             AudioManage.instance.PlaySFX("Welcome");
         }

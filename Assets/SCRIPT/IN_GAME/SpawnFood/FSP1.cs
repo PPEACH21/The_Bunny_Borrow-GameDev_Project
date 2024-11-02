@@ -12,7 +12,8 @@ public class FSP1 : MonoBehaviour
         if (!hasSpawned)
         {
             // ใช้ transform.position และ transform.rotation ของ prefabToSpawn เอง
-            Instantiate(prefabToSpawn, prefabToSpawn.transform.position, prefabToSpawn.transform.rotation);
+            GameObject spawnedObject = Instantiate(prefabToSpawn, prefabToSpawn.transform.position, prefabToSpawn.transform.rotation);
+            spawnedObject.name = "FSTB1";
             hasSpawned = true;
             AudioManage.instance.PlaySFX("FoodToOrder");
         }

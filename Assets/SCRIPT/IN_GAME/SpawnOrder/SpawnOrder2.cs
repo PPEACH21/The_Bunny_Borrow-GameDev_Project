@@ -10,7 +10,8 @@ public class SpawnOrder2 : MonoBehaviour
     {
         if (!hasSpawned)
         {
-            Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+            GameObject spawnedObject = Instantiate(prefabToSpawn, spawnPoint.position, spawnPoint.rotation);
+            spawnedObject.name = "FTB2";
             hasSpawned = true;
             AudioManage.instance.PlaySFX("Food");
         }
