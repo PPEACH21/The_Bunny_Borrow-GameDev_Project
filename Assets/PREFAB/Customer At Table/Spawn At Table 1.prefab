@@ -108,8 +108,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190335
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -237,7 +237,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToShowCheckbill: {fileID: 6816754483148819424}
-  fireworkEffect: {fileID: 3695458403546763377}
 --- !u!114 &1600655173347129483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,8 +269,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 14, y: 20.508692, z: 17}
-  m_Center: {x: 0, y: 9.754346, z: -0.0786}
+  m_Size: {x: 14, y: 20.508692, z: 15.934037}
+  m_Center: {x: 0, y: 9.754346, z: 0.45438147}
 --- !u!1 &5053766347141363910
 GameObject:
   m_ObjectHideFlags: 0
