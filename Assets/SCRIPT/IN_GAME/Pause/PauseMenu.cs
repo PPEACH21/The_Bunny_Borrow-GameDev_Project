@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
+using System.Threading.Tasks;
 
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject winPanel;
+    [SerializeField] RectTransform pausePanelRect;
+    [SerializeField] float topPosY, middlePosY;
+    [SerializeField] float tweenDuration;
+    [SerializeField] CanvasGroup canvasGroup;
     float resettime;
     public static bool check = false;
     public static bool checkRE = false;
@@ -19,6 +25,7 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
+        PausePanelIntro();
     }
 
     public void Home()
@@ -31,10 +38,12 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("LoadingScene");
     }
 
-    public void Resume()
+    public async void Resume()
     {
+        await PausePanelOutro();
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
+        
     }
 
     public void Restart()
@@ -76,4 +85,15 @@ public class PauseMenu : MonoBehaviour
         Datainfo.timeRemaining = Datainfo.timeDafault;
         check = true;
     }
+    void PausePanelIntro()
+    {
+        canvasGroup.DOFade(1, tweenDuration).SetUpdate(true); 
+        pausePanelRect.DOAnchorPosY(middlePosY,tweenDuration).SetUpdate(true);
+    }
+    async Task PausePanelOutro()
+    {
+        canvasGroup.DOFade(0, tweenDuration).SetUpdate(true);
+        await pausePanelRect.DOAnchorPosY(topPosY, tweenDuration).SetUpdate(true).AsyncWaitForCompletion();
+    }
 }
+
