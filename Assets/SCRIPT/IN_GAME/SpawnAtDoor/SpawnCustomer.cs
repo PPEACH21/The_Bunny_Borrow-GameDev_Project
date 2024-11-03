@@ -67,7 +67,7 @@ public class PrefabMover : MonoBehaviour
 {
     public Animator animator;
     public Transform target;
-    public float speed = 2f;
+    public float speed = 4f;
     public bool check;
 
     private void Start()
