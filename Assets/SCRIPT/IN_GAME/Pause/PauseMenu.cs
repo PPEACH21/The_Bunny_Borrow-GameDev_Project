@@ -8,7 +8,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     [SerializeField] GameObject winPanel;
     [SerializeField] RectTransform pausePanelRect;
-    [SerializeField] float topPosY, middlePosY;
+    [SerializeField] RectTransform winPanelRect;
+    [SerializeField] float topPosY, middlePosY,DownPosY;
     [SerializeField] float tweenDuration;
     [SerializeField] CanvasGroup canvasGroup;
     float resettime;
@@ -46,12 +47,15 @@ public class PauseMenu : MonoBehaviour
         
     }
 
-    public void Restart()
+    public async void Restart()
     {
+        await PausePanelOutro();
+        await WinPanelOutro();
         ResetAll();
         Time.timeScale = 1;
         check = false;
         checkRE = true;
+       
     }
 
 
@@ -84,6 +88,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 0; // หยุดเกมเมื่อจบ (ถ้าต้องการ)
         Datainfo.timeRemaining = Datainfo.timeDafault;
         check = true;
+        WinPanelIntro();
     }
     void PausePanelIntro()
     {
@@ -94,6 +99,16 @@ public class PauseMenu : MonoBehaviour
     {
         canvasGroup.DOFade(0, tweenDuration).SetUpdate(true);
         await pausePanelRect.DOAnchorPosY(topPosY, tweenDuration).SetUpdate(true).AsyncWaitForCompletion();
+    }
+    void WinPanelIntro()
+    {
+        canvasGroup.DOFade(1, tweenDuration).SetUpdate(true);
+        winPanelRect.DOAnchorPosY(middlePosY,tweenDuration).SetUpdate(true);
+    }
+    async Task WinPanelOutro()
+    {
+        canvasGroup.DOFade(0, tweenDuration).SetUpdate(true);
+        await winPanelRect.DOAnchorPosY(DownPosY, tweenDuration).SetUpdate(true).AsyncWaitForCompletion();
     }
 }
 
