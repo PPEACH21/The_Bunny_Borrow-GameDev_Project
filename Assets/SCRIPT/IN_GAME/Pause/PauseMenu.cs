@@ -20,7 +20,12 @@ public class PauseMenu : MonoBehaviour
 
     void Start()
     {
-        //tutorial();
+        if (!Datainfo.checkTuTorial)
+        {
+            tutorial();
+            Datainfo.checkTuTorial = true;
+        }
+ 
         //เรียกฟังก์ชัน ShowWinPanel หลังจากเวลาผ่านไป 10 วินาที
         Invoke("ShowWinPanel", Datainfo.timeRemaining);
     }
@@ -40,12 +45,15 @@ public class PauseMenu : MonoBehaviour
         checkRE = true;
         Datainfo.timeRemaining = Datainfo.timeDafault;
         SceneManager.LoadScene("LoadingScene");
+        Datainfo.checkTuTorial = false;
     }
 
     public async void Resume()
     {
         await PausePanelOutro();
+        await TutorialPanelOutro();
         pauseMenu.SetActive(false);
+        tutorialpane.SetActive(false);  
         Time.timeScale = 1;
         
     }
@@ -59,13 +67,14 @@ public class PauseMenu : MonoBehaviour
         check = false;
         checkRE = true;
        
+       
     }
 
     public void tutorial()
     {
         tutorialpane.SetActive(true);
         Time.timeScale = 0;
-        WinPanelIntro();
+        TutorialPanelIntro();
 
     }
     public void ResetAll()
