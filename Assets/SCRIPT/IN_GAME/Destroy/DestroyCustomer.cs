@@ -43,6 +43,7 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                 else
                 {
                     Debug.Log("NOBODY S1");
+                    AudioManage.instance.PlaySFX("Alert");
                 }
                 break;
                 case "Customer2(Clone)":
@@ -73,7 +74,8 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                     else
                     {
                         Debug.Log("NOBODY S2");
-                    }
+                        AudioManage.instance.PlaySFX("Alert");
+                }
                 break;
                 case "Customer3(Clone)":
                     if (!SPAT3.hasSpawned)
@@ -95,7 +97,8 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                     else
                     {
                         Debug.Log("NOBODY S3");
-                    }
+                        AudioManage.instance.PlaySFX("Alert");
+                }
                 break;
                 case "Customer4(Clone)":
                     if (!SPAT4.hasSpawned)
@@ -108,8 +111,9 @@ public class DestroyCustomer : MonoBehaviour, IInteractable
                     }
                     else
                     {
-                        Debug.Log("NOBODY S3");
-                    }
+                        Debug.Log("NOBODY S4");
+                        AudioManage.instance.PlaySFX("Alert");
+                }
                 break;
                 default:
                     // Optional: Handle cases where the name doesn't match any of the above
