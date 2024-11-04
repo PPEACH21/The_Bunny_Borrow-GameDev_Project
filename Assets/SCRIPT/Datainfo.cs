@@ -28,4 +28,6 @@ public class Datainfo : MonoBehaviour
     public static int CountTable2 = 0;
     public static int CountTable3 = 0;
     public static int CountTable4 = 0;
+
+    public static bool checkTuTorial = false;
 }
