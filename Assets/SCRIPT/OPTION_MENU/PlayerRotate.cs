@@ -25,19 +25,19 @@ public class PlayerRotate : MonoBehaviour
         {
             ChangeButtonColor(e1);
         }
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             ChangeButtonColor(w1);
-            if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
+            if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))&& (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
             {
                 ChangeButtonColor(d1);              
             }
-            else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
+            else if ((Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))&& (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
             {
                 ChangeButtonColor(a1);
            
             }
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.Space))
             {
                 animator.Play("W0");
                 ChangeButtonColor(shift1);
@@ -47,20 +47,20 @@ public class PlayerRotate : MonoBehaviour
                 animator.Play("W");
             }
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             
             ChangeButtonColor(a1);
-            if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.W))
+            if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
             {
                 ChangeButtonColor(w1);
                 
             }
-            else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.S))
+            else if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
             {
                 ChangeButtonColor(s1);         
             }
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.Space))
             {
                 animator.Play("A0");
                 ChangeButtonColor(shift1);
@@ -70,18 +70,18 @@ public class PlayerRotate : MonoBehaviour
                 animator.Play("A");
             }
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             ChangeButtonColor(s1);
-            if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
+            if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)))
             {
                 ChangeButtonColor(a1);       
             }
-            else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
+            else if ((Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)) && (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)))
             {
                 ChangeButtonColor(d1);           
             }
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.Space))
             {
                 animator.Play("S0");
                 ChangeButtonColor(shift1);
@@ -91,18 +91,18 @@ public class PlayerRotate : MonoBehaviour
                 animator.Play("S");
             }
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             ChangeButtonColor(d1);
-            if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.S))
+            if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
             {
                 ChangeButtonColor(s1);               
             }
-            else if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.W))
+            else if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)))
             {
                 ChangeButtonColor(w1);    
             }
-            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+            if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) || Input.GetKey(KeyCode.Space))
             {
                 animator.Play("D0");
                 ChangeButtonColor(shift1);
