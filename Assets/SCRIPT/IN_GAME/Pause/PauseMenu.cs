@@ -18,6 +18,8 @@ public class PauseMenu : MonoBehaviour
     public static bool check = false;
     public static bool checkRE = false;
 
+    public GameObject HideMenu;
+
     void Start()
     {
         if (!Datainfo.checkTuTorial)
@@ -46,6 +48,7 @@ public class PauseMenu : MonoBehaviour
         Datainfo.timeRemaining = Datainfo.timeDafault;
         SceneManager.LoadScene("LoadingScene");
         Datainfo.checkTuTorial = false;
+        HideMenu.SetActive(true);
     }
 
     public async void Resume()
@@ -66,8 +69,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1;
         check = false;
         checkRE = true;
-       
-       
+        HideMenu.SetActive(true);
     }
 
     public void tutorial()
@@ -107,6 +109,8 @@ public class PauseMenu : MonoBehaviour
         Datainfo.timeRemaining = Datainfo.timeDafault;
         check = true;
         WinPanelIntro();
+
+        HideMenu.SetActive(false);
     }
     void PausePanelIntro()
     {
@@ -131,7 +135,7 @@ public class PauseMenu : MonoBehaviour
     void TutorialPanelIntro()
     {
         canvasGroup.DOFade(1, tweenDuration).SetUpdate(true);
-       tutorialpaneRect.DOAnchorPosY(middlePosY, tweenDuration).SetUpdate(true);
+       tutorialpaneRect.DOAnchorPosY(20, tweenDuration).SetUpdate(true);
     }
     async Task TutorialPanelOutro()
     {
