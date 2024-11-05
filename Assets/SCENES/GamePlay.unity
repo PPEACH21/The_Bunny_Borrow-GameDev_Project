@@ -6776,6 +6776,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 5590be5911455de4898ed047d7d615d0, type: 3}
   - name: Alert
     clip: {fileID: 8300000, guid: 8b9007c60ab6ba54daa3f19ee24c65f1, type: 3}
+  - name: Paper
+    clip: {fileID: 8300000, guid: 9135c7f0818b4f948b5182e665950e29, type: 3}
   sfxSource: {fileID: 1440996300}
 --- !u!82 &1440996300
 AudioSource:

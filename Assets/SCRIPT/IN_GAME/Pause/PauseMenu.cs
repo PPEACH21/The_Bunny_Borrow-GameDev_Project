@@ -37,6 +37,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
         PausePanelIntro();
+        AudioManage.instance.PlaySFX("Paper");
     }
 
     public void Home()
@@ -77,7 +78,7 @@ public class PauseMenu : MonoBehaviour
         tutorialpane.SetActive(true);
         Time.timeScale = 0;
         TutorialPanelIntro();
-
+        AudioManage.instance.PlaySFX("Paper");
     }
     public void ResetAll()
     {

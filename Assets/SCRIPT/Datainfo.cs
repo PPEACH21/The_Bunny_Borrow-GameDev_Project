@@ -21,7 +21,7 @@ public class Datainfo : MonoBehaviour
     public static int Score = 0;
 
     //Timer Remaining
-    public static float timeDafault = 90f;
+    public static float timeDafault = 50f;
     public static float timeRemaining = timeDafault;
 
     public static int CountTable1 = 0;
